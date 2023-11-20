@@ -21,7 +21,6 @@ export const webScreenConfig: WebScreenRuleConfig = {
     [Routes.SuccessScreen]: {
       urlPattern: 'success',
       title: 'It Worked!',
-      presentation: 'modal',
     },
     [Routes.One]: {
       urlPattern: 'one',

@@ -11,6 +11,7 @@ import NestedTab from 'example/src/NestedTab';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Routes } from 'example/src/webScreenRoutes';
 import ShareScreen from 'example/src/ShareScreen';
+import { navigationRef } from './shared/navigationRef';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,10 +36,8 @@ const BottomTabs = () => {
 };
 
 const App: React.FC = () => {
-  const navigation = useNavigationContainerRef<any>();
-
   return (
-    <NavigationContainer linking={webScreens.linking} ref={navigation}>
+    <NavigationContainer linking={webScreens.linking} ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{
           headerBackTitle: 'Back',

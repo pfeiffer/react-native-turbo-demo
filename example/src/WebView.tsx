@@ -9,6 +9,7 @@ import {
 } from 'react-native-turbo';
 import { useWebviewNavigate } from 'react-native-web-screen';
 import { Routes } from './webScreenRoutes';
+import { navigationRef } from './shared/navigationRef';
 import Form from './Strada/Form';
 
 export type Props = {
@@ -30,6 +31,11 @@ const WebView: React.FC<Props> = (props) => {
   const onVisitProposal = ({
     nativeEvent: { action: actionType, url },
   }: NativeSyntheticEvent<VisitProposal>) => {
+    // Dismiss any modals when receiving a new navigation request
+    if (navigationRef.getCurrentOptions()?.presentation === 'modal') {
+      navigationRef.goBack();
+    }
+
     navigateTo(url, actionType);
   };
 
