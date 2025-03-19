@@ -5,6 +5,9 @@
 //  Created by Bartłomiej Fryz on 23/01/2023.
 //
 
+import Foundation
+import WebKit
+
 protocol RNSessionSubscriber {
   
   var id: UUID { get set }
