@@ -47,13 +47,9 @@ def supportsNamespace() {
 def addHotwireDependencies(Map<String, String> libraries) {
   libraries.each { type, lib ->
     if (type.startsWith("dep")) {
-      dependencies {
-        implementation lib
-      }
+      project.dependencies.add('implementation', lib)
     } else if (type.startsWith("api")) {
-      dependencies {
-        api lib
-      }
+      project.dependencies.add('api', lib)
     }
   }
 }
