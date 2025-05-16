@@ -59,7 +59,7 @@ allprojects {
     mavenLocal()
 
     maven {
-      url "$rootDir/../node_modules/react-native-turbo/android/vendor"    
+      url "$rootDir/../node_modules/react-native-turbo/android/vendor"
     }
   }
 }
@@ -106,7 +106,7 @@ repositories {
   mavenLocal()
 
   maven {
-    url "$rootDir/../node_modules/react-native-turbo/android/vendor"    
+    url "$rootDir/../node_modules/react-native-turbo/android/vendor"
   }
 }
 
